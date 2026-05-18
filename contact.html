@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my address</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Shorthand በመጠቀም ኮዱ በጣም እንዲያጥር ተደርጓል */
+        body { margin: 0; font-family: sans-serif; background: linear-gradient(135deg, #141e30, #243b55); min-height: 100vh; color: #fff; }
+        header { background: rgba(0,0,0,0.3); padding: 15px 0; backdrop-filter: blur(10px); }
+        nav, nav ul { display: flex; justify-content: space-around; align-items: center; list-style: none; margin: 0; padding: 0; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav ul li a:hover { color: #00d2ff; }
+        
+        .contact-section { display: flex; justify-content: center; align-items: center; min-height: 80vh; }
+        
+        /* ካርዱ ይበልጥ ደምቆ እንዲበራ (Glow Effect) ተደርጓል */
+        .contact-card { background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 15px rgba(0, 210, 255, 0.2); text-align: center; max-width: 400px; width: 100%; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(20px); }
+        .contact-card h1 { font-size: 2.5rem; margin: 0 0 10px; color: #00d2ff; }
+        .contact-card p { color: #a0a5b5; margin-bottom: 30px; }
+        
+        .social-row { display: flex; justify-content: center; gap: 25px; margin-bottom: 30px; }
+        
+        /* የተቆጠበና አጭር የሶሻል በተን ስታይል */
+        .social-btn { font-size: 2.5rem; width: 65px; height: 65px; line-height: 65px; border-radius: 50%; background: rgba(255,255,255,0.05); display: inline-block; transition: 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+        .telegram { color: #0088cc; } .tiktok { color: #fff; } .email { color: #ea4335; }
+        
+        /* ማውዝ ሲያርፍበት ደምቆ የሚበራ አኒሜሽን */
+        .social-btn:hover { transform: scale(1.15) translateY(-5px); background: #fff; box-shadow: 0 10px 20px rgba(0,210,255,0.4); }
+        .telegram:hover { color: #0088cc; } .tiktok:hover { color: #000; } .email:hover { color: #ea4335; }
+        .social-btn.clicked { transform: scale(0.9); }
+        
+        /* ቶስት እና ፉተር */
+        #toast { position: fixed; bottom: -50px; left: 50%; transform: translateX(-50%); background: #00d2ff; color: #141e30; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s; z-index: 2000; }
+        #toast.show { bottom: 30px; }
+        .info-footer { margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #00d2ff; font-weight: bold; }
+        footer { text-align: center; padding: 20px; background: rgba(0,0,0,0.4); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><h2>HB</h2></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="registration.html">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-card">
+            <h1>Contact Me</h1>
+            <p>Connect with me on social media or send an email.</p>
+
+            <div class="social-row">
+                <a href="https://t.me/henichlight" target="_blank" class="social-btn telegram" title="Telegram" data-name="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.henilight.com" target="_blank" class="social-btn tiktok" title="TikTok" data-name="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="mailto:hbrihanu5@gmail.com" class="social-btn email" title="Email Me" data-name="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="info-footer">
+                <p><i class="fas fa-university"></i> Wachemo University IT Student</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="toast">Opening...</div>
+
+    <footer>
+        <p>&copy; 2026 Henok Brihanu. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const socialButtons = document.querySelectorAll('.social-btn');
+        const toast = document.getElementById('toast');
+
+        socialButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.classList.add('clicked');
+                setTimeout(() => btn.classList.remove('clicked'), 200);
+                showToast(`Redirecting to Henok's ${btn.getAttribute('data-name')}...`);
+            });
+        });
+
+        function showToast(message) {
+            toast.innerText = message; toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    </script>
+</body>
+</html>
