@@ -140,40 +140,40 @@
             <h1>Create Account</h1>
             <p>Fill in your details to join the community.</p>
             
-            <form action="https://formspree.io/f/xjgzknra" method="POST">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="fullName" placeholder="Henok Brihanu" required>
-                </div>
+           <form action="https://formspree.io/f/xjgzknra" method="POST">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="fullName" id="fullName" placeholder="Henok Brihanu" required>
+    </div>
 
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="email" placeholder="example@gmail.com" required>
-                </div>
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+    </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Gender</label>
-                        <select id="gender" required>
-                            <option value="">Select</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Department</label>
-                        <input type="text" id="dept" placeholder="e.g. IT" required>
-                    </div>
-                </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Gender</label>
+            <select name="gender" id="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text" name="department" id="dept" placeholder="e.g. IT" required>
+        </div>
+    </div>
 
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="password" placeholder="****" required>
-                    <div id="passwordError" class="error-msg">Password must be at least 6 characters long!</div>
-                </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" id="password" placeholder="****" required>
+        <div id="passwordError" class="error-msg">Password must be at least 6 characters long!</div>
+    </div>
 
-                <button type="submit" class="reg-btn">Register Now</button>
-            </form>
+    <button type="submit" class="reg-btn">Register Now</button>
+</form>
         </div>
     </section>
 
