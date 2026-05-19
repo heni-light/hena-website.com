@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <title>My personal website</title>
     <style>
@@ -73,7 +73,7 @@
             align-items: center;
             text-align: center;
             background: radial-gradient(circle at center, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
-            padding: 120px 20px 40px 20px;
+            padding: 140px 20px 40px 20px;
             position: relative;
         }
 
@@ -88,19 +88,23 @@
         }
         .hero-main-content {
             display: flex;
+            flex-direction: column; 
             align-items: center;
             justify-content: center;
-            gap: 50px; 
+            gap: 30px; 
             max-width: 1100px;
             width: 100%;
             position: relative;
             z-index: 2;
             margin-bottom: 30px;
-            text-align: left;
+            text-align: center;
         }
 
         .hero-text-side {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
         }
 
         .profile-container {
@@ -147,6 +151,7 @@
         .btn-group {
             display: flex;
             gap: 20px;
+            justify-content: center;
         }
         .btn {
             padding: 15px 35px;
@@ -176,9 +181,10 @@
             transform: translateY(-5px);
         }
         .hero-stats {
-            margin-top: 50px;
+            margin-top: 30px;
             display: flex;
             gap: 60px;
+            justify-content: center;
         }
 
         .stat-card {
@@ -210,11 +216,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.02);
         }
         @media (max-width: 768px) {
-            .hero-main-content {
-                flex-direction: column-reverse; 
-                text-align: center;
-                gap: 30px;
-            }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.1rem; }
             .hero-stats { gap: 30px; }
@@ -232,7 +233,7 @@
                 <li><a href="index.html">Index</a></li>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="menu.html">Projects</a></li>
                 <li><a href="registration.html">Register</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -242,6 +243,10 @@
     <section class="hero">
         <canvas id="particle-canvas"></canvas>
         <div class="hero-main-content">
+            <div class="profile-container">
+                <img src="c:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\henich.jpg" alt="Henok Brihanu" class="profile-img">
+            </div>
+
             <div class="hero-text-side">
                 <h1>Hello, I'm Henok</h1>
                 <p>A passionate Information Technology student specializing in creating modern, user-friendly web experiences.</p>
@@ -250,9 +255,6 @@
                     <a href="project.html" class="btn btn-primary">Explore My Work</a>
                     <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
                 </div>
-            </div>
-            <div class="profile-container">
-                <img src="c:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\henich.jpg" alt="Henok Brihanu" class="profile-img">
             </div>
 
         </div>
