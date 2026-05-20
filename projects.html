@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Skills & Projects | Henok Brihanu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="projects.css">
 </head>
 <body>
- <!-- 1. HEADER (FIXED NAVIGATION) -->
+
     <header>
         <nav>
             <div class="logo">HENOK.B</div>
@@ -16,7 +16,7 @@
             </div>
 
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="registration.html">Register</a></li>
@@ -25,7 +25,6 @@
         </nav>
     </header>
 
-    <!-- 2. SKILLS SECTION -->
     <section class="skills-section">
         <h2>Skills</h2>
         <div class="skills-grid">
@@ -48,11 +47,32 @@
         </div>
     </section>
 
-    <!-- 3. PROJECTS & CERTIFICATES SECTION -->
+    <section class="add-project-section">
+        <h2>Add New Project / Certificate</h2>
+        <form id="projectForm">
+            <div class="form-group">
+                <label for="projTitle">Title:</label>
+                <input type="text" id="projTitle" placeholder="Eg. Ethio Coders | Python" required>
+            </div>
+            <div class="form-group">
+                <label for="projCategory">Category:</label>
+                <select id="projCategory" required>
+                    <option value="certificate">Certificates</option>
+                    <option value="database">Database/SQL</option>
+                    <option value="cpp">OS & C++</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="projFileName">File Name (with extension):</label>
+                <input type="text" id="projFileName" placeholder="Eg. python_cert.pdf or project.docx" required>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-plus"></i> Add Project</button>
+        </form>
+    </section>
+
     <section class="project-section">
         <h2>Featured Projects & Certificates</h2>
         
-        <!-- Filter Controls Bar -->
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="certificate">Certificates</button>
@@ -60,10 +80,8 @@
             <button class="filter-btn" data-filter="cpp">OS & C++</button>
         </div>
 
-        <!-- Cards Vertical Container -->
-        <div class="project-grid">
+        <div class="project-grid" id="projectGrid">
             
-            <!-- Card 1: AI Certificate -->
             <div class="project-card" data-category="certificate">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-brain"></i></div>
@@ -77,7 +95,6 @@
                 </div>
             </div>
 
-            <!-- Card 2: Programming Certificate -->
             <div class="project-card" data-category="certificate">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-code"></i></div>
@@ -91,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- Card 3: Data Analyst Certificate -->
             <div class="project-card" data-category="certificate">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
@@ -105,111 +121,164 @@
                 </div>
             </div>
 
-            <!-- Card 4: Android Fundamentals Certificate -->
             <div class="project-card" data-category="certificate">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
                     <div class="card-info"><h3>Ethio Coders | Android Fundamental</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\android fundamentals.pdf" download="Henok_Android_Certificate" class="download-btn">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\android fundamentals.pdf" 
+                    download="Henok_Android_Certificate" class="download-btn">
                         <i class="fas fa-download"></i> Download Android
                     </a>
                     <div class="category-tag">Certificates</div>
                 </div>
             </div>
 
-            <!-- Card 5: Database System Project -->
             <div class="project-card" data-category="database">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-database"></i></div>
                     <div class="card-info"><h3>Database System Project (SQL / DBMS)</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\WACHEMO UNIVERSITY DATABASE PROJECT (1).doc" class="download-btn">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\WACHEMO UNIVERSITY DATABASE PROJECT (1).pdf""
+                     download="Wachemo_Database_Project" class="download-btn">
                         <i class="fas fa-folder-open"></i> SQL Source
                     </a>
                     <div class="category-tag">Database</div>
                 </div>
             </div>
 
-            <!-- Card 6: Operating System Simulator -->
             <div class="project-card" data-category="cpp">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                    <div class="card-info"><h3>Operating System Simulator (FCFS, SJF, Round Robin)</h3></div>
+                    <div class="card-info"><h3>Operating System Scheduling algorithms (FCFS, SJF, Round Robin)</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\Operating system with python.docx" class="download-btn">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\Operating system with python.pdf"
+                    download="OS_Scheduling with" class="download-btn">
                         <i class="fas fa-folder-open"></i> OS Simulator
                     </a>
-                    <div class="category-tag">OS & C++</div>
+                    <div class="category-tag">OS </div>
                 </div>
             </div>
 
-            <!-- Card 7: Multi-Bank Queue Management System -->
             <div class="project-card" data-category="cpp">
                 <div class="card-left">
                     <div class="card-icon"><i class="fas fa-university"></i></div>
                     <div class="card-info"><h3>Multi-Bank Queue Management System (Singly Linked List)</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\DSA project.docx" class="download-btn">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\DSA project (3).pdf"
+                    download="Multi_Bank_Queue_Project" class="download-btn">
                         <i class="fas fa-folder-open"></i> Queue Project
                     </a>
-                    <div class="category-tag">OS & C++</div>
+                    <div class="category-tag">DSA</div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- 4. FOOTER -->
     <footer>
         Wachemo University
     </footer>
-
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const progressBars = document.querySelectorAll('.progress');
-            setTimeout(() => {
-                progressBars.forEach(bar => {
-                    const targetWidth = bar.getAttribute('data-width');
-                    bar.style.width = targetWidth;
-                });
-            }, 200);
-
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    document.querySelector('.filter-btn.active').classList.remove('active');
-  
-                    button.classList.add('active');
-
-                    const filterValue = button.getAttribute('data-filter');
-
-                    projectCards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        
-                        if (filterValue === 'all' || cardCategory === filterValue) {
-                            card.style.display = 'flex';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
-                            }, 50);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'scale(0.95)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300); 
-                        }
-                    });
-                });
-            });
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Skill Progress Bar Animation
+    const progressBars = document.querySelectorAll('.progress');
+    setTimeout(() => {
+        progressBars.forEach(bar => {
+            const targetWidth = bar.getAttribute('data-width');
+            bar.style.width = targetWidth;
         });
-    </script>
+    }, 200);
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    function applyFilter() {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        const filterValue = activeBtn.getAttribute('data-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (filterValue === 'all' || cardCategory === filterValue) {
+                card.style.display = 'flex';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300); 
+            }
+        });
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.filter-btn.active').classList.remove('active');
+            button.classList.add('active');
+            applyFilter();
+        });
+    });
+
+    const projectForm = document.getElementById('projectForm');
+    const projectGrid = document.getElementById('projectGrid');
+
+    if (projectForm) {
+        projectForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            const title = document.getElementById('projTitle').value;
+            const category = document.getElementById('projCategory').value; 
+            const fileName = document.getElementById('projFileName').value;
+
+            let iconClass = 'fa-folder-open';
+            let tagText = 'OS & C++';
+            
+            if (category === 'certificate') {
+                iconClass = 'fa-award';
+                tagText = 'Certificates';
+            } else if (category === 'database') {
+                iconClass = 'fa-database';
+                tagText = 'Database';
+            } else if (category === 'cpp') {
+                iconClass = 'fa-microchip';
+                tagText = 'OS & C++';
+            }
+
+            const newCard = document.createElement('div');
+            newCard.classList.add('project-card');
+            newCard.setAttribute('data-category', category); 
+            
+            newCard.innerHTML = `
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas ${iconClass}"></i></div>
+                    <div class="card-info"><h3>${title}</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="files/${fileName}" download="${title.replace(/\s+/g, '_')}" class="download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <div class="category-tag">${tagText}</div>
+                </div>
+            `;
+
+            projectGrid.insertBefore(newCard, projectGrid.firstChild);
+
+            projectForm.reset();
+
+            applyFilter();
+            
+            alert('New item added successfully!');
+        });
+    }
+});</script>
 </body>
 </html>
