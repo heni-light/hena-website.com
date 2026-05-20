@@ -1,233 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
-   <title>my address</title>
+    <title>Contact Me | Henok Brihanu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-           background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            color: #333;
-        }
-
-        header {
-            background: #2c3e50;
-            padding: 1.2rem 0;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo h2 {
-            margin: 0;
-            letter-spacing: 2px;
-            color: #3498db;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none; 
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #3498db;
-        }
-
-        .contact-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 75vh;
-            padding: 40px 20px;
-        }
-       .contact-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            text-align: center;
-            max-width: 450px;
-            width: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-card h1 {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .contact-card p {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .social-row {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-        .social-btn {
-            font-size: 2.2rem;
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
-            border-radius: 50%;
-            background: #f8f9fa;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-       .telegram { color: #0088cc; }
-        .tiktok { color: #010101; }
-        .email { color: #ea4335; }
-
-        .social-btn:hover {
-            transform: scale(1.15) translateY(-7px);
-            background: #ffffff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        
-        .social-btn.clicked {
-            transform: scale(0.9);
-        }
-       #toast {
-            position: fixed;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2c3e50;
-            color: white;
-            padding: 14px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 2000;
-            font-size: 0.95rem;
-        }
-
-        #toast.show {
-            bottom: 40px;
-        }
-
-        .info-footer {
-            margin-top: 35px;
-            padding-top: 25px;
-            border-top: 2px solid #f1f2f6;
-            font-weight: 600;
-            color: #34495e;
-        }
-
-        .info-footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-        
-        .info-footer i {
-            color: #e74c3c; 
-            margin-right: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #2c3e50;
-            color: white;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-    </style>
+    <link rel="stylesheet" href="contact.css">
+   
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo"><h2>HB</h2></div>
+            <div class="logo"><h2>Henok Brihanu</h2></div>
+            
+            <div class="profile-container">
+                <img src="henich.jpg" alt="Henok Brihanu">
+            </div>
+
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Index</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="registration.html">Register</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="contact-section">
-        <div class="contact-card">
-            <h1>Contact Me</h1>
-            <p>Connect with me on social media or send an email.</p>
+    <div class="scrollable-content">
+        
+        <section class="contact-section">
+            <div class="contact-card">
+                <h1>Contact Me</h1>
+                <p>Connect with me on social media or send an email.</p>
+                <div class="social-column">
+                    <!-- Telegram -->
+                    <a href="https://t.me/henichlight" target="_blank" class="social-link-btn telegram" data-name="Telegram">
+                        <i class="fab fa-telegram"></i> <span>Telegram: @henichlight</span>
+                    </a>
 
-            <div class="social-row">
-                <a href="https://t.me/henichlight" target="_blank" class="social-btn telegram" title="Telegram" data-name="Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/heni.light" target="_blank" class="social-link-btn instagram" data-name="Instagram">
+                        <i class="fab fa-instagram"></i> <span>Instagram: heni.light</span>
+                    </a>
 
-                <a href="https://www.henilight.com" target="_blank" class="social-btn tiktok" title="TikTok" data-name="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/heni.light" target="_blank" class="social-link-btn facebook" data-name="Facebook">
+                        <i class="fab fa-facebook"></i> <span>Facebook: heni light</span>
+                    </a>
 
-                <a href="mailto:hbrihanu5@gmail.com" class="social-btn email" title="Email Me" data-name="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@heni.light" target="_blank" class="social-link-btn tiktok" data-name="TikTok">
+                        <i class="fab fa-tiktok"></i> <span>TikTok: heni.light</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:hbrihanu5@gmail.com" class="social-link-btn email" data-name="Email">
+                        <i class="fas fa-envelope"></i> <span>Email: hbrihanu5@gmail.com</span>
+                    </a>
+                </div>
+
+                <div class="info-footer">
+                    <p><i class="fas fa-university"></i> Wachemo University IT Student</p>
+                    <p><i class="fas fa-phone-alt"></i> Phone: +251968386531</p>
+                </div>
             </div>
+        </section>
 
-            <div class="info-footer">
-                <p><i class="fas fa-university"></i> Wachemo University IT Student</p>
-            </div>
-        </div>
-    </section>
+        <div id="toast">Opening...</div>
 
-    <div id="toast">Opening...</div>
-
-    <footer>
-        <p>&copy; 2026 Henok Brihanu. All Rights Reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 Henok Brihanu | Wachemo University</p>
+        </footer>
+    </div>
 
     <script>
-        const socialButtons = document.querySelectorAll('.social-btn');
+        const socialButtons = document.querySelectorAll('.social-link-btn');
         const toast = document.getElementById('toast');
 
         socialButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                btn.classList.add('clicked');
-                setTimeout(() => {
-                    btn.classList.remove('clicked');
-                }, 200);
                 const platform = btn.getAttribute('data-name');
                 showToast(`Redirecting to Henok's ${platform}...`);
             });
