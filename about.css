@@ -1,90 +1,227 @@
 
-        body {
-            background-color: #0d1527;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh; /* ሙሉ የስክሪን ከፍታ */
-            overflow: hidden; /* ጠቅላላ ገጹ እንዳይንቀሳቀስ ይቆልፋል */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
         }
-
-        /* Header & Navigation - ሁልጊዜ ከላይ ቋሚ ሆኖ ይቆማል */
+        
+        /* Centered Header Navigation Layout */
         header {
-            background-color: #111a2e;
-            padding: 15px 50px;
-            border-bottom: 1px solid #1e293b;
-            flex-shrink: 0; /* ሄደሩ በከፍታ ማነስ እንዳይቀንስ ይከላከላል */
-            position: relative;
-            z-index: 10;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #38bdf8;
-            letter-spacing: 1px;
-            margin: 0;
+        nav .logo h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            flex: 1;
         }
 
-        /* Profile Photo in Navigation */
-        .profile-container {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            border: 3px solid #38bdf8;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        /* Centering the links list */
+        nav ul {
             display: flex;
+            list-style: none;
+            gap: 25px;
             justify-content: center;
+            flex: 2; /* Takes the middle section */
+        }
+
+        /* Invisible spacer to perfectly balance the left logo */
+        nav::after {
+            content: '';
+            flex: 1;
+            display: block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Hero Section Layout adjustments */
+        .hero {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        /* Standalone Profile Photo Structure */
+        .hero-profile-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .hero-profile-container {
+            display: inline-block;
+        }
+
+        .hero-profile-container img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00d2ff;
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .hero-profile-container img:hover {
+            transform: scale(1.05);
+            border-color: #9d4edd;
+            box-shadow: 0 0 35px rgba(157, 78, 221, 0.6);
+        }
+
+        /* Typing cursor styling */
+        .cursor {
+            font-weight: bold;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+            nav::after {
+                display: none;
+            }
+        }
+    
+
+
+
+        :root {
+            --bg-dark: #0b0f19;         
+            --card-bg: #131c2e;          
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --accent-blue: #00d2ff;      
+            --accent-purple: #9d4edd;    
+            --border-color: #22314d;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            overflow: hidden; 
+        }
+
+        header {
+            background-color: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .profile-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 25px;
-            margin: 0;
-            padding: 0;
         }
 
         nav ul li a {
-            color: #94a3b8;
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        nav ul li a:hover, nav ul li a.active {
-            color: #38bdf8;
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--accent-blue);
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
         }
 
-        /* ዋናው የይዘት ክፍል - የራሱ Scroll ይኖረዋል */
         .scrollable-content {
-            flex: 1;
-            overflow-y: auto; /* ካርዶቹ ሄደሩ ጋ ሳይደርሱ እዚህ ውስጥ ብቻ Scroll እንዲሆኑ ያደርጋል */
-            padding: 40px 20px;
+            height: 100vh;
+            overflow-y: scroll;
+            padding-top: 80px; 
+            scroll-behavior: smooth;
         }
 
         .about-container {
-            max-width: 850px;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-wrapper {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .profile-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .profile-container img {
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .profile-container img:hover {
+            transform: scale(1.06);
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 35px rgba(157, 78, 221, 0.6);
         }
 
         .profile-header {
@@ -93,95 +230,108 @@
         }
 
         .profile-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #ffffff;
+            font-size: 2.3rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #38bdf8;
-            margin: 0;
+        .profile-header .tagline {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
 
-        /* ካርዶቹ ወደ ታች መደርደራቸው ሳይቀየር */
         .about-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
+            margin-bottom: 50px;
         }
 
-        /* Individual Card Design */
         .card {
-            background-color: #111a2e;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 25px 30px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             opacity: 0;
             transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease;
         }
 
-        /* Scroll Reveal Animation ክፍል */
         .card.show {
             opacity: 1;
             transform: translateY(0);
         }
 
         .card:hover {
-            border-color: #1d4ed8;
-            box-shadow: 0 10px 20px rgba(29, 78, 216, 0.15);
+            border-color: rgba(0, 210, 255, 0.3);
         }
 
         .card h2 {
-            font-size: 1.4rem;
-            color: #38bdf8;
-            margin-top: 0;
+            font-size: 1.35rem;
             margin-bottom: 15px;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .card p {
-            color: #cbd5e1;
-            line-height: 1.7;
-            font-size: 1.05rem;
-            margin: 0;
+        .card h2 i {
+            color: var(--accent-blue);
         }
 
-        /* Timeline List */
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
         .timeline-list {
             list-style: none;
-            padding: 0;
-            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .timeline-list li {
-            color: #cbd5e1;
-            padding-left: 15px;
-            border-left: 2px solid #1d4ed8;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 20px;
         }
 
-        .timeline-list li:last-child {
-            margin-bottom: 0;
-            border-left-color: #38bdf8;
+        .timeline-list li::before {
+            content: '•';
+            color: var(--accent-purple);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
         }
 
         .timeline-list strong {
             color: #ffffff;
         }
 
-        /* Footer */
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: #64748b;
-            font-size: 0.95rem;
-            border-top: 1px solid #1e293b;
-            margin-top: 60px;
+            padding: 30px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
-    
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .profile-header h1 {
+                font-size: 1.8rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
