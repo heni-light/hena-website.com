@@ -1,280 +1,94 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-    <title>MY personal website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --card-bg: white;
-            --header-bg : #2c3e50;
-            --accent-color: #3498db;
-        }
-
-        .dark-theme {
-            --bg-color: #1a252f;
-            --text-color: #f4f7f6;
-            --card-bg: #2c3e50;
-            --header-bg: #111a22;
-            --accent-color: #2980b9;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        header {
-            background: var(--header-bg);
-            padding: 1rem 0;
-            color: white;
-            transition: background 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        .theme-toggle-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        
-        .theme-toggle-btn:hover {
-            transform: scale(1.2);
-        }
-
-        .about-container {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .profile-header h1 {
-            font-size: 3rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .dark-theme .profile-header h1 {
-            color: #fff;
-        }
-
-        .profile-header .tagline {
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--accent-color);
-            transition: background-color 0.3s, transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .card.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .card h2 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-top: 0;
-        }
-        
-        .dark-theme .card h2 {
-            color: #fff;
-        }
-
-        .card i {
-            color: var(--accent-color);
-        }
-
-        .card ul {
-            padding-left: 20px;
-        }
-
-        .card ul li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: var(--header-bg);
-            color: white;
-            margin-top: 50px;
-            transition: background 0.3s;
-        }
-
-            .profile-header h1 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+    <title>About Me | Henok Brihanu</title>
+  
+    <link rel="stylesheet" href="about.css">
+   
 </head>
 <body>
-
     <header>
         <nav>
-            <div class="logo"><h2>HB</h2></div>
+            <div class="logo">HENOK.B</div>
+            
+            <div class="profile-container">
+                <img src="henich.jpg" alt="Henok Brihanu">
+            </div>
+
             <ul>
-                <li><a href="index.html">index</a></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="registration.html">Register</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="theme-toggle-btn" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
         </nav>
     </header>
+    <div class="scrollable-content" id="scrollContainer">
+        <main class="about-container">
+            <section class="profile-header">
+                <h1>Henok Brihanu</h1>
+                <p class="tagline">IT Student | The next web development</p>
+            </section>
 
-    <div class="about-container">
-        <div class="profile-header">
-            <h1>Henok Brihanu</h1>
-            <p class="tagline">IT Student | The Next Web Developer</p>
-        </div>
-       <div class="about-grid">
-            <div class="card">
-                <h2><i class="fas fa-user"></i> Background of me</h2>
-                <p>My name is Henok Brihanu. I was born in Central Ethiopia in Hadiyya Zone, Misha woreda, Era gemedo Kebele 
-                    from my father Brihanu Shifarew and my mother Zewdnash Nuramo in 1998.
-                      My life’s journey has been defined by a relentless pursuit of knowledge, a deep-seated 
-                      commitment to my community, and an ever-growing passion for the trans-formative power of
-                       technology. I believe that our backgrounds shape our character, but our visions define our future.
-                     I describe myself as a quiet individual who finds peace in reflection and productivity.
-                      While I value my solitude, I am deeply respectful and considerate. 
-                      I am a versatile and willing worker, ready to take on any challenge.
-                       In my spare time, I am an avid reader, constantly seeking new perspectives through books.</p>
-            </div>
-           <div class="card">
-                <h2><i class="fas fa-graduation-cap"></i> Academic Journey</h2>
-                <ul>
-                    <li><strong>From Grade 1-8 in:</strong> Era gemedo Elementary School</li>
-                    <li><strong>From Grade 9-11 in:</strong> Homacho secondary High School</li>
-                    <li><strong>For Grade 12 in:</strong> Wachemo secondary and preparatory High School</li>
-                    <li><strong>Now at Wachemo University:</strong> 2nd Year IT Student</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h2><i class="fas fa-bullseye"></i> My Vision</h2>
-                <p>
-                    I am dedicated to mastering Web Development using HTML, CSS, and JavaScript. 
-                    My goal is to work with global technology companies and create professional 
-                    websites that solve community problems.
-                </p>
-            </div>
-           <div class="card">
-                <h2><i class="fas fa-code"></i> Skills & Interests</h2>
-                <p>
-                    Active in learning of technology my passionate this develop the my website ,mobile application
-                    I also enjoy photo and video editing using tools like CapCut to create 
-                    engaging digital content.
-                </p>
-            </div>
-          <div class="card">
-                <h2><i class="fas fa-hands-helping"></i> Community</h2>
-                <p>
-                    I believe in giving back. I am committed to volunteer work and acting 
-                    as a reliable supporter for my family and community, balancing my 
-                    academic excellence with service.
-                </p>
-            </div>
-            
-        </div>
+            <section class="about-grid">
+                
+                <div class="card">
+                    <h2><i class="fas fa-user"></i> My Background</h2>
+                    <p>I was born and raised in the Hadiyya Zone, Misha Woreda (Era Gemedo), Central Ethiopia.
+                         My life’s journey is defined by a relentless pursuit of knowledge, a deep-seated commitment to my 
+                         community, and a growing passion for the transformative power of technology. 
+                         While I am a reflective individual who thrives in focused environments,
+                          I am highly versatile, collaborative, and always ready to tackle complex technical challenges.</p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-graduation-cap"></i> Academic Journey</h2>
+                    <ul class="timeline-list">
+                        <li><strong>Grades 1-8:</strong> Era Gemedo Elementary School</li>
+                        <li><strong>Grades 9-11:</strong> Homacho Secondary High School</li>
+                        <li><strong>Grade 12:</strong> Wachemo Secondary & Preparatory High School</li>
+                        <li><strong>University:</strong> 2nd Year Information Technology Student at Wachemo University</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-bullseye"></i> Vision & Goals</h2>
+                    <p>I am dedicated to mastering modern full-stack web development.
+                         My ultimate career objective is to collaborate with global technology industry 
+                         leaders and engineer clean, production-grade applications that solve real-world, community-centric problems.</p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-code"></i> Technical Skills & Interests</h2>
+                    <p>My primary focus lies in crafting clean user interfaces and interactive systems using <strong>HTML5, CSS3, and JavaScript</strong>. 
+                        Beyond software architecture, I enjoy digital content production, utilizing advanced 
+                        video editing tools like CapCut to create compelling visual narratives.</p>
+                </div>
+
+                <div class="card">
+                    <h2><i class="fas fa-hands-helping"></i> Community & Leadership</h2>
+                    <p>I am firmly committed to social impact and volunteering.
+                         I aim to balance academic excellence with technical leadership, acting as a reliable resource for my
+                          family, peers, and local community projects.</p>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Henok Brihanu | Wachemo University</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Henok Brihanu. All Rights Reserved.</p>
-    </footer>
-
     <script>
-       const themeToggle = document.getElementById('themeToggle');
-        const toggleIcon = themeToggle.querySelector('i');
-
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            
-            if (document.body.classList.contains('dark-theme')) {
-                toggleIcon.classList.remove('fa-moon');
-                toggleIcon.classList.add('fa-sun');
-            } else {
-                toggleIcon.classList.remove('fa-sun');
-                toggleIcon.classList.add('fa-moon');
-            }
-        });
-       const cards = document.querySelectorAll('.card');
-
+        const scrollContainer = document.getElementById('scrollContainer');
+        const cards = document.querySelectorAll('.card');
+        
         const checkCards = () => {
-            const triggerBottom = window.innerHeight / 5 * 4;
+            const triggerBottom = scrollContainer.clientHeight * 0.88;
 
             cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-
+                const cardTop = card.getBoundingClientRect().top - scrollContainer.getBoundingClientRect().top;
                 if (cardTop < triggerBottom) {
                     card.classList.add('show');
                 } else {
@@ -282,7 +96,7 @@
                 }
             });
         };
-        window.addEventListener('scroll', checkCards);
+        scrollContainer.addEventListener('scroll', checkCards);
         window.addEventListener('load', checkCards);
     </script>
 
