@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
     <title>Skills & Projects | Henok Brihanu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="projects.css">
-    
-</head>
+     <link rel="stylesheet" href="projects.css">
+</head>    
 <body>
 
     <header>
         <nav>
-            <div class="logo">HENOK.B</div>
-            
-            <div class="profile-container">
-                <img src="henich.jpg" alt="Henok Brihanu">
-            </div>
-
+           
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -25,6 +18,14 @@
             </ul>
         </nav>
     </header>
+
+    <!-- NEW CENTERED PROFILE SECTION -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <img src="henich.jpg" alt="Henok Brihanu">
+        </div>
+         <div class="logo">HENOK .BRIHANU</HENOK></div>
+    </section>
 
     <section class="skills-section">
         <h2>Skills</h2>
@@ -89,7 +90,7 @@
                     <div class="card-info"><h3>Ethio Coders | Artificial Intelligence</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\AI.pdf" download="Henok_AI_Certificate" class="download-btn">
+                    <a href="Hena web/AI.pdf" download="Henok_AI_Certificate" class="download-btn">
                         <i class="fas fa-download"></i> Download AI
                     </a>
                     <div class="category-tag">Certificates</div>
@@ -102,7 +103,7 @@
                     <div class="card-info"><h3>Ethio Coders | Programming Fundamental</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\programming fundamental.pdf" download="Henok_Programming_Certificate" class="download-btn">
+                    <a href="Hena web/programming fundamental.pdf" download="Henok_Programming_Certificate" class="download-btn">
                         <i class="fas fa-download"></i> Download Code
                     </a>
                     <div class="category-tag">Certificates</div>
@@ -115,7 +116,7 @@
                     <div class="card-info"><h3>Ethio Coders | Data Analyst</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\data analist.pdf" download="Henok_Data_Analyst_Certificate" class="download-btn">
+                    <a href="Hena web/data analist.pdf" download="Henok_Data_Analyst_Certificate" class="download-btn">
                         <i class="fas fa-download"></i> Download Data
                     </a>
                     <div class="category-tag">Certificates</div>
@@ -128,8 +129,7 @@
                     <div class="card-info"><h3>Ethio Coders | Android Fundamental</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\android fundamentals.pdf" 
-                    download="Henok_Android_Certificate" class="download-btn">
+                    <a href="Hena web/android fundamentals.pdf" download="Henok_Android_Certificate" class="download-btn">
                         <i class="fas fa-download"></i> Download Android
                     </a>
                     <div class="category-tag">Certificates</div>
@@ -142,8 +142,7 @@
                     <div class="card-info"><h3>Database System Project (SQL / DBMS)</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\WACHEMO UNIVERSITY DATABASE PROJECT (1).pdf""
-                     download="Wachemo_Database_Project" class="download-btn">
+                    <a href="Hena web/WACHEMO UNIVERSITY DATABASE PROJECT (1).pdf" download="Wachemo_Database_Project" class="download-btn">
                         <i class="fas fa-folder-open"></i> SQL Source
                     </a>
                     <div class="category-tag">Database</div>
@@ -156,11 +155,10 @@
                     <div class="card-info"><h3>Operating System Scheduling algorithms (FCFS, SJF, Round Robin)</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\Operating system with python.pdf"
-                    download="OS_Scheduling with" class="download-btn">
+                    <a href="Hena web/Operating system with python.pdf" download="OS_Scheduling" class="download-btn">
                         <i class="fas fa-folder-open"></i> OS Simulator
                     </a>
-                    <div class="category-tag">OS </div>
+                    <div class="category-tag">OS & C++</div>
                 </div>
             </div>
 
@@ -170,11 +168,10 @@
                     <div class="card-info"><h3>Multi-Bank Queue Management System (Singly Linked List)</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\DSA project (3).pdf"
-                    download="Multi_Bank_Queue_Project" class="download-btn">
+                    <a href="Hena web/DSA project (3).pdf" download="Multi_Bank_Queue_Project" class="download-btn">
                         <i class="fas fa-folder-open"></i> Queue Project
                     </a>
-                    <div class="category-tag">DSA</div>
+                    <div class="category-tag">OS & C++</div>
                 </div>
             </div>
 
@@ -184,6 +181,7 @@
     <footer>
         Wachemo University
     </footer>
+
     <script>
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Skill Progress Bar Animation
@@ -195,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 200);
 
+    // 2. Filter Functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     
     function applyFilter() {
@@ -229,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // 3. Form Submission (Dynamic Card Creation)
     const projectForm = document.getElementById('projectForm');
     const projectGrid = document.getElementById('projectGrid');
 
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="card-info"><h3>${title}</h3></div>
                 </div>
                 <div class="card-right">
-                    <a href="files/${fileName}" download="${title.replace(/\s+/g, '_')}" class="download-btn">
+                    <a href="Hena web/${fileName}" download="${title.replace(/\s+/g, '_')}" class="download-btn">
                         <i class="fas fa-download"></i> Download
                     </a>
                     <div class="category-tag">${tagText}</div>
@@ -272,14 +272,11 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
             projectGrid.insertBefore(newCard, projectGrid.firstChild);
-
             projectForm.reset();
-
             applyFilter();
-            
-            alert('New item added successfully!');
         });
     }
-});</script>
+});
+    </script>
 </body>
 </html>
