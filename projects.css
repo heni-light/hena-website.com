@@ -1,17 +1,29 @@
+<style>
+        /* 1. GLOBAL & RESET STYLES */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             background-color: #0d1527;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            overflow-x: hidden;
         }
 
-        /* Header & Navigation */
+        /* 2. FIXED HEADER & NAV */
         header {
-            background-color: #111a2e;
-            padding: 15px 50px;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #111a2e; 
+            padding: 10px 50px;
             border-bottom: 1px solid #1e293b;
+            z-index: 9999;    
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
         }
 
         nav {
@@ -23,16 +35,16 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: #38bdf8;
             letter-spacing: 1px;
         }
 
-        /* Profile Photo in Navigation */
+        /* Profile Photo Container */
         .profile-container {
-            width: 75px;
-            height: 75px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             border: 3px solid #38bdf8;
             overflow: hidden;
@@ -52,14 +64,12 @@
             display: flex;
             list-style: none;
             gap: 25px;
-            margin: 0;
-            padding: 0;
         }
 
         nav ul li a {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             transition: color 0.3s ease;
         }
 
@@ -67,25 +77,42 @@
             color: #38bdf8;
         }
 
-        /* Sections Styling */
+        /* 3. MAIN CONTENT LAYOUT  */
         section {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+        .skills-section {
+            margin-top: 130px; 
         }
 
         h2 {
             font-size: 1.8rem;
             color: #ffffff;
             margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
         }
 
-        /* Technical Skills Horizonatal Style */
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 3px;
+            background-color: #38bdf8;
+            border-radius: 2px;
+        }
+
+        /* Skills Progress Bars */
         .skills-grid {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
+            margin-top: 20px;
             margin-bottom: 50px;
         }
 
@@ -102,10 +129,6 @@
             margin-bottom: 8px;
         }
 
-        .skill-info span:last-child {
-            color: #94a3b8;
-        }
-
         .progress-bar {
             background-color: #1e293b;
             height: 8px;
@@ -117,9 +140,9 @@
         .progress {
             background-color: #38bdf8;
             height: 100%;
-            width: 0%; /* በጃቫስክሪፕት አኒሜት ይደረጋል */
+            width: 0%; /*  */
             border-radius: 4px;
-            transition: width 1s cubic-bezier(0.1, 1, 0.1, 1);
+            transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
             box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
         }
 
@@ -128,14 +151,14 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 35px;
+            margin: 30px 0;
         }
 
         .filter-btn {
             background-color: transparent;
             color: #94a3b8;
             border: 1px solid #1e293b;
-            padding: 8px 18px;
+            padding: 8px 20px;
             border-radius: 20px;
             font-size: 0.95rem;
             cursor: pointer;
@@ -148,7 +171,7 @@
             border-color: #38bdf8;
         }
 
-        /* Project Cards Stacked Layout (Bottom-to-Bottom) */
+        /* Project Cards (Row Stacked Layout) */
         .project-grid {
             display: flex;
             flex-direction: column;
@@ -163,7 +186,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.3s ease;
+            opacity: 1;
         }
 
         .project-card:hover {
@@ -171,7 +195,6 @@
             transform: translateY(-2px);
         }
 
-        /* Card Left Section: Icon and Title Text */
         .card-left {
             display: flex;
             align-items: center;
@@ -199,7 +222,6 @@
             color: #cbd5e1;
         }
 
-        /* Card Right Section: Button and Category Tag */
         .card-right {
             display: flex;
             align-items: center;
@@ -209,15 +231,15 @@
         .download-btn {
             background-color: #2e3b4e;
             color: #cbd5e1;
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 8px;
             border: 1px solid #3b4252;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .download-btn:hover {
@@ -231,7 +253,7 @@
             padding: 5px 15px;
             border-radius: 15px;
             font-size: 0.85rem;
-            min-width: 80px;
+            min-width: 95px;
             text-align: center;
             border: 1px solid #1e293b;
         }
@@ -239,10 +261,10 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             color: #64748b;
             font-size: 0.95rem;
             border-top: 1px solid #1e293b;
-            margin-top: 60px;
+            margin-top: 80px;
         }
-  
+    
