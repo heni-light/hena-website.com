@@ -4,20 +4,12 @@
     <title>Contact Me | Henok Brihanu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="contact.css">
-   
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo"><h2>Henok Brihanu</h2></div>
-            
-            <div class="profile-container">
-                <img src="henich.jpg" alt="Henok Brihanu">
-            </div>
-
             <ul>
-               
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -29,33 +21,47 @@
 
     <div class="scrollable-content">
         
+        <!-- 1. Profile Photo Standalone Below Header -->
+        <div class="standalone-profile-wrapper">
+            <div class="standalone-profile-container">
+                <img src="henich.jpg" alt="Henok Brihanu">
+            </div>            <div class="logo"><h2>Henok Brihanu</h2></div>
+
+        </div>
+
         <section class="contact-section">
             <div class="contact-card">
                 <h1>Contact Me</h1>
                 <p>Connect with me on social media or send an email.</p>
+                
                 <div class="social-column">
                     <!-- Telegram -->
-                    <a href="https://t.me/henichlight" target="_blank" class="social-link-btn telegram" data-name="Telegram">
+                    <a href="https://t.me/henichlight" target="_blank" class="social-link-btn telegram" 
+                       data-name="Telegram" data-bg="#001d3d" data-card="#002b5c" data-accent="#0088cc">
                         <i class="fab fa-telegram"></i> <span>Telegram: @henichlight</span>
                     </a>
 
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/heni.light" target="_blank" class="social-link-btn instagram" data-name="Instagram">
+                    <a href="https://www.instagram.com/heni.light" target="_blank" class="social-link-btn instagram" 
+                       data-name="Instagram" data-bg="#240046" data-card="#3c096c" data-accent="#e1306c">
                         <i class="fab fa-instagram"></i> <span>Instagram: heni.light</span>
                     </a>
 
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/heni.light" target="_blank" class="social-link-btn facebook" data-name="Facebook">
+                    <a href="https://www.facebook.com/heni.light" target="_blank" class="social-link-btn facebook" 
+                       data-name="Facebook" data-bg="#0a192f" data-card="#172a45" data-accent="#1877f2">
                         <i class="fab fa-facebook"></i> <span>Facebook: heni light</span>
                     </a>
 
                     <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@heni.light" target="_blank" class="social-link-btn tiktok" data-name="TikTok">
+                    <a href="https://www.tiktok.com/@heni.light" target="_blank" class="social-link-btn tiktok" 
+                       data-name="TikTok" data-bg="#010101" data-card="#121212" data-accent="#fe0979">
                         <i class="fab fa-tiktok"></i> <span>TikTok: heni.light</span>
                     </a>
 
                     <!-- Email -->
-                    <a href="mailto:hbrihanu5@gmail.com" class="social-link-btn email" data-name="Email">
+                    <a href="mailto:hbrihanu5@gmail.com" class="social-link-btn email" 
+                       data-name="Email" data-bg="#2d0000" data-card="#4a0000" data-accent="#ea4335">
                         <i class="fas fa-envelope"></i> <span>Email: hbrihanu5@gmail.com</span>
                     </a>
                 </div>
@@ -77,9 +83,30 @@
     <script>
         const socialButtons = document.querySelectorAll('.social-link-btn');
         const toast = document.getElementById('toast');
+        const root = document.documentElement;
+
+        // Colors to return to when not hovering/clicking
+        const defaultColors = {
+            bg: '#0b0f19',
+            card: '#131c2e',
+            accent: '#00d2ff'
+        };
 
         socialButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            // 2. Change full page colors on Hover / Click
+            btn.addEventListener('mouseenter', () => {
+                root.style.setProperty('--bg-dark', btn.getAttribute('data-bg'));
+                root.style.setProperty('--card-bg', btn.getAttribute('data-card'));
+                root.style.setProperty('--accent-blue', btn.getAttribute('data-accent'));
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                root.style.setProperty('--bg-dark', defaultColors.bg);
+                root.style.setProperty('--card-bg', defaultColors.card);
+                root.style.setProperty('--accent-blue', defaultColors.accent);
+            });
+
+            btn.addEventListener('click', () => {
                 const platform = btn.getAttribute('data-name');
                 showToast(`Redirecting to Henok's ${platform}...`);
             });
