@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Registration | Henok Brihanu</title>
-    <link rel="stylesheet" href="registration.css">
-   
+    <title>Skills & Projects | Henok Brihanu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="projects.css">
 </head>
 <body>
-
+ <!-- 1. HEADER (FIXED NAVIGATION) -->
     <header>
         <nav>
             <div class="logo">HENOK.B</div>
@@ -18,60 +18,197 @@
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="registration.html" class="active">Register</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="registration.html">Register</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <div class="scrollable-content">
-        
-        <section class="reg-section">
-            <div class="reg-container">
-                <h1>Create Account</h1>
-                <p>Fill in your details to join the community.</p>
-                
-                <form id="regForm" action="https://formspree.io/f/mpqnqaon" method="POST">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" name="fullName" id="fullName" placeholder="Henok Brihanu" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Gender</label>
-                        <select name="gender" id="gender" required>
-                            <option value="">Select</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Student ID</label>
-                            <input type="text" name="studentId" id="studentId" placeholder="e.g. WCU171256" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Department</label>
-                            <input type="text" name="department" id="dept" placeholder="e.g. IT" required>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="reg-btn">Register Now</button>
-                </form>
+    <!-- 2. SKILLS SECTION -->
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-info"><span>C++ / Programming II</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="85%"></div></div> 
             </div>
-        </section>
-        <footer>
-            <p>&copy; 2026 Henok Brihanu | Wachemo University</p>
-        </footer>
-    </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Database (SQL)</span><span>80%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>HTML / CSS</span><span>95%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROJECTS & CERTIFICATES SECTION -->
+    <section class="project-section">
+        <h2>Featured Projects & Certificates</h2>
+        
+        <!-- Filter Controls Bar -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="certificate">Certificates</button>
+            <button class="filter-btn" data-filter="database">Database/SQL</button>
+            <button class="filter-btn" data-filter="cpp">OS & C++</button>
+        </div>
+
+        <!-- Cards Vertical Container -->
+        <div class="project-grid">
+            
+            <!-- Card 1: AI Certificate -->
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Artificial Intelligence</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\AI.pdf" download="Henok_AI_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download AI
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
+
+            <!-- Card 2: Programming Certificate -->
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Programming Fundamental</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\programming fundamental.pdf" download="Henok_Programming_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download Code
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
+
+            <!-- Card 3: Data Analyst Certificate -->
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Data Analyst</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\data analist.pdf" download="Henok_Data_Analyst_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download Data
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
+
+            <!-- Card 4: Android Fundamentals Certificate -->
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Android Fundamental</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\android fundamentals.pdf" download="Henok_Android_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download Android
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
+
+            <!-- Card 5: Database System Project -->
+            <div class="project-card" data-category="database">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <div class="card-info"><h3>Database System Project (SQL / DBMS)</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\WACHEMO UNIVERSITY DATABASE PROJECT (1).doc" class="download-btn">
+                        <i class="fas fa-folder-open"></i> SQL Source
+                    </a>
+                    <div class="category-tag">Database</div>
+                </div>
+            </div>
+
+            <!-- Card 6: Operating System Simulator -->
+            <div class="project-card" data-category="cpp">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="card-info"><h3>Operating System Simulator (FCFS, SJF, Round Robin)</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\Operating system with python.docx" class="download-btn">
+                        <i class="fas fa-folder-open"></i> OS Simulator
+                    </a>
+                    <div class="category-tag">OS & C++</div>
+                </div>
+            </div>
+
+            <!-- Card 7: Multi-Bank Queue Management System -->
+            <div class="project-card" data-category="cpp">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-university"></i></div>
+                    <div class="card-info"><h3>Multi-Bank Queue Management System (Singly Linked List)</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\DSA project.docx" class="download-btn">
+                        <i class="fas fa-folder-open"></i> Queue Project
+                    </a>
+                    <div class="category-tag">OS & C++</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. FOOTER -->
+    <footer>
+        Wachemo University
+    </footer>
+
     <script>
-        document.getElementById('regForm').addEventListener('submit', function(event) {
-            const fullName = document.getElementById('fullName').value;
-            alert('Welcome ' + fullName + '! Registration data is being submitted.');
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBars = document.querySelectorAll('.progress');
+            setTimeout(() => {
+                progressBars.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-width');
+                    bar.style.width = targetWidth;
+                });
+            }, 200);
+
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelector('.filter-btn.active').classList.remove('active');
+  
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || cardCategory === filterValue) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300); 
+                        }
+                    });
+                });
+            });
         });
     </script>
 </body>
