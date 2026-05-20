@@ -1,200 +1,78 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <title>Registration | Henok Brihanu</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color:white;
-            color: #333;
-        }
-
-        header {
-            background: #2c3e50;
-            padding: 2px;
-            color: white;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 10px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .reg-section {
-            padding: 60px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh;
-        }
-
-        .reg-container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 450px;
-            width: 100%;
-        }
-
-        .reg-container h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .reg-container p {
-            text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #34495e;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
-        .error-msg {
-            color: red;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 15px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
-        .reg-btn {
-            width: 100%;
-            padding: 15px;
-            background-color: green;
-            color: white;
-            border: none;       
-            font-size: 20px;
-            
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: white;
-            margin-top: 40px;
-        }  
-    </style>
+    <link rel="stylesheet" href="registration.css">
+   
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo"><h2>HB</h2></div>
+            <div class="logo">HENOK.B</div>
+            
+            <div class="profile-container">
+                <img src="henich.jpg" alt="Henok Brihanu">
+            </div>
+
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="menu.html">Projects</a></li>
-                <li><a href="registration.html">Register</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="registration.html" class="active">Register</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+    <div class="scrollable-content">
+        
+        <section class="reg-section">
+            <div class="reg-container">
+                <h1>Create Account</h1>
+                <p>Fill in your details to join the community.</p>
+                
+                <form id="regForm" action="https://formspree.io/f/mpqnqaon" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" id="fullName" placeholder="Henok Brihanu" required>
+                    </div>
 
-    <section class="reg-section">
-        <div class="reg-container">
-            <h1>Create Account</h1>
-            <p>Fill in your details to join the community.</p>
-            
-          <form action="https://formspree.io/f/mpqnqaon" method="POST">
-    <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" name="fullName" id="fullName" placeholder="Henok Brihanu" required>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select name="gender" id="gender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Student ID</label>
+                            <input type="text" name="studentId" id="studentId" placeholder="e.g. WCU171256" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input type="text" name="department" id="dept" placeholder="e.g. IT" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="reg-btn">Register Now</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2026 Henok Brihanu | Wachemo University</p>
+        </footer>
     </div>
-
-    <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
-    </div>
-
-    <div class="form-row">
-        <div class="form-group">
-            <label>Gender</label>
-            <select name="gender" id="gender" required>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Department</label>
-            <input type="text" name="department" id="dept" placeholder="e.g. IT" required>
-        </div>
-    </div>
-
-    <button type="submit" class="reg-btn">Register Now</button>
-</form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Henok Brihanu. All Rights Reserved.</p>
-    </footer>
-
     <script>
         document.getElementById('regForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
             const fullName = document.getElementById('fullName').value;
-            const password = document.getElementById('password').value;
-            const passwordError = document.getElementById('passwordError');
-
-            if (password.length < 6) {
-                passwordError.style.display = 'block';
-                return; 
-            } else {
-                passwordError.style.display = 'none';
-            }
-            alert('Welcome ' + fullName + '! Registration Successful.');
-            
-            document.getElementById('regForm').reset();
-        }
-        );
+            alert('Welcome ' + fullName + '! Registration data is being submitted.');
+        });
     </script>
-
 </body>
 </html>
