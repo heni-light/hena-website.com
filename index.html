@@ -1,125 +1,284 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home | Henok Brihanu Portfolio</title>
-    <link rel="stylesheet" href="home.css">
-    
+    <title>Skills & Projects | Henok Brihanu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
     <header>
         <nav>
- 
-            <div class="logo"><h2>Henok Brihanu</h2></div>
+            <div class="logo">HENOK.B</div>
             
             <div class="profile-container">
                 <img src="henich.jpg" alt="Henok Brihanu">
             </div>
 
             <ul>
-                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="registration.html">Register</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-info"><span>C++ / Programming II</span><span>85%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="85%"></div></div> 
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Database (SQL)</span><span>80%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>HTML / CSS</span><span>95%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
+                <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+            </div>
+        </div>
+    </section>
 
-    <div class="scrollable-content">
-        <canvas id="particle-canvas"></canvas>
-        <section class="hero">
+    <section class="add-project-section">
+        <h2>Add New Project / Certificate</h2>
+        <form id="projectForm">
+            <div class="form-group">
+                <label for="projTitle">Title:</label>
+                <input type="text" id="projTitle" placeholder="Eg. Ethio Coders | Python" required>
+            </div>
+            <div class="form-group">
+                <label for="projCategory">Category:</label>
+                <select id="projCategory" required>
+                    <option value="certificate">Certificates</option>
+                    <option value="database">Database/SQL</option>
+                    <option value="cpp">OS & C++</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="projFileName">File Name (with extension):</label>
+                <input type="text" id="projFileName" placeholder="Eg. python_cert.pdf or project.docx" required>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-plus"></i> Add Project</button>
+        </form>
+    </section>
+
+    <section class="project-section">
+        <h2>Featured Projects & Certificates</h2>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="certificate">Certificates</button>
+            <button class="filter-btn" data-filter="database">Database/SQL</button>
+            <button class="filter-btn" data-filter="cpp">OS & C++</button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
             
-            <h1>Henok Brihanu</h1>
-            <p>Information Technology Student at Wachemo University</p>
-            <div class="typing-container">
-                I am a <span id="typing-text"></span><span class="cursor">&nbsp;</span>
-            </div>
-            <div class="btn-group">
-                <a href="projects.html" class="btn btn-main">View Projects</a>
-                <a href="contact.html" class="btn btn-alt">Contact Me</a>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <h3 class="counter" data-target="2">0</h3>
-                    <span>Year Student</span>
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Artificial Intelligence</h3></div>
                 </div>
-                <div class="stat-item">
-                    <h3 class="counter" data-target="2">0</h3>
-                    <span>Projects Done</span>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\AI.pdf" download="Henok_AI_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download AI
+                    </a>
+                    <div class="category-tag">Certificates</div>
                 </div>
             </div>
-            
-        </section>
 
-        <footer>
-            <p>&copy; 2026 Henok Brihanu. All Rights Reserved.</p>
-        </footer>
-    </div>
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-code"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Programming Fundamental</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\programming fundamental.pdf" download="Henok_Programming_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download Code
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
 
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Data Analyst</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\data analist.pdf" download="Henok_Data_Analyst_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download Data
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="certificate">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="card-info"><h3>Ethio Coders | Android Fundamental</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\android fundamentals.pdf" 
+                    download="Henok_Android_Certificate" class="download-btn">
+                        <i class="fas fa-download"></i> Download Android
+                    </a>
+                    <div class="category-tag">Certificates</div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="database">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <div class="card-info"><h3>Database System Project (SQL / DBMS)</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\WACHEMO UNIVERSITY DATABASE PROJECT (1).pdf""
+                     download="Wachemo_Database_Project" class="download-btn">
+                        <i class="fas fa-folder-open"></i> SQL Source
+                    </a>
+                    <div class="category-tag">Database</div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="cpp">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="card-info"><h3>Operating System Scheduling algorithms (FCFS, SJF, Round Robin)</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\Operating system with python.pdf"
+                    download="OS_Scheduling with" class="download-btn">
+                        <i class="fas fa-folder-open"></i> OS Simulator
+                    </a>
+                    <div class="category-tag">OS </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="cpp">
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas fa-university"></i></div>
+                    <div class="card-info"><h3>Multi-Bank Queue Management System (Singly Linked List)</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\DSA project (3).pdf"
+                    download="Multi_Bank_Queue_Project" class="download-btn">
+                        <i class="fas fa-folder-open"></i> Queue Project
+                    </a>
+                    <div class="category-tag">DSA</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        Wachemo University
+    </footer>
     <script>
-        const words = ["Next Web Developer.", "Tech Innovator.", "Problem Solver."];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const targetSpan = document.getElementById("typing-text");
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                targetSpan.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                targetSpan.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            let typingSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typingSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typingSpeed = 500;
-            }
-
-            setTimeout(typeEffect, typingSpeed);
-        }
-
-        function runCounterAnimation() {
-            const counters = document.querySelectorAll('.counter');
-            
-            counters.forEach(counter => {
-                counter.innerText = '0';
-                const target = +counter.getAttribute('data-target');
-                
-                if (target === 2 && counter.nextElementSibling.textContent.includes("Year Student")) {
-                    counter.innerText = "2nd";
-                } else if (target <= 10) {
-                    counter.innerText = target + "+";
-                } else {
-                    const updateCounter = () => {
-                        const count = +counter.innerText;
-                        const increment = target / 100;
-                        if(count < target) {
-                            counter.innerText = `${Math.ceil(count + increment)}`;
-                            setTimeout(updateCounter, 20);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-                    updateCounter();
-                }
-            });
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            typeEffect();
-            runCounterAnimation();
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Skill Progress Bar Animation
+    const progressBars = document.querySelectorAll('.progress');
+    setTimeout(() => {
+        progressBars.forEach(bar => {
+            const targetWidth = bar.getAttribute('data-width');
+            bar.style.width = targetWidth;
         });
-    </script>
+    }, 200);
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    function applyFilter() {
+        const activeBtn = document.querySelector('.filter-btn.active');
+        const filterValue = activeBtn.getAttribute('data-filter');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (filterValue === 'all' || cardCategory === filterValue) {
+                card.style.display = 'flex';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300); 
+            }
+        });
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelector('.filter-btn.active').classList.remove('active');
+            button.classList.add('active');
+            applyFilter();
+        });
+    });
+
+    const projectForm = document.getElementById('projectForm');
+    const projectGrid = document.getElementById('projectGrid');
+
+    if (projectForm) {
+        projectForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            const title = document.getElementById('projTitle').value;
+            const category = document.getElementById('projCategory').value; 
+            const fileName = document.getElementById('projFileName').value;
+
+            let iconClass = 'fa-folder-open';
+            let tagText = 'OS & C++';
+            
+            if (category === 'certificate') {
+                iconClass = 'fa-award';
+                tagText = 'Certificates';
+            } else if (category === 'database') {
+                iconClass = 'fa-database';
+                tagText = 'Database';
+            } else if (category === 'cpp') {
+                iconClass = 'fa-microchip';
+                tagText = 'OS & C++';
+            }
+
+            const newCard = document.createElement('div');
+            newCard.classList.add('project-card');
+            newCard.setAttribute('data-category', category); 
+            
+            newCard.innerHTML = `
+                <div class="card-left">
+                    <div class="card-icon"><i class="fas ${iconClass}"></i></div>
+                    <div class="card-info"><h3>${title}</h3></div>
+                </div>
+                <div class="card-right">
+                    <a href="files/${fileName}" download="${title.replace(/\s+/g, '_')}" class="download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <div class="category-tag">${tagText}</div>
+                </div>
+            `;
+
+            projectGrid.insertBefore(newCard, projectGrid.firstChild);
+
+            projectForm.reset();
+
+            applyFilter();
+            
+            alert('New item added successfully!');
+        });
+    }
+});</script>
 </body>
 </html>
