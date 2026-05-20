@@ -3,19 +3,12 @@
 <head>
     <title>Home | Henok Brihanu Portfolio</title>
     <link rel="stylesheet" href="home.css">
-    
 </head>
 <body>
 
     <header>
         <nav>
- 
-            <div class="logo"><h2>Henok Brihanu</h2></div>
             
-            <div class="profile-container">
-                <img src="henich.jpg" alt="Henok Brihanu">
-            </div>
-
             <ul>
                 <li><a href="home.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -26,20 +19,32 @@
         </nav>
     </header>
 
-
     <div class="scrollable-content">
+        <!-- Interactive Canvas Background -->
         <canvas id="particle-canvas"></canvas>
+        
         <section class="hero">
-            
+            <!-- 1. Standalone Profile Photo Below Header -->
+            <div class="hero-profile-wrapper">
+                <div class="hero-profile-container">
+                    <img src="henich.jpg" alt="Henok Brihanu">
+                </div>
+            </div>
+
             <h1>Henok Brihanu</h1>
             <p>Information Technology Student at Wachemo University</p>
+            
+            <!-- Typewriter Container -->
             <div class="typing-container">
-                I am a <span id="typing-text"></span><span class="cursor">&nbsp;</span>
+                I am a <span id="typing-text"></span><span class="cursor">|</span>
             </div>
+
             <div class="btn-group">
                 <a href="projects.html" class="btn btn-main">View Projects</a>
                 <a href="contact.html" class="btn btn-alt">Contact Me</a>
             </div>
+
+            <!-- Stats Dashboard Section -->
             <div class="stats">
                 <div class="stat-item">
                     <h3 class="counter" data-target="2">0</h3>
@@ -50,7 +55,6 @@
                     <span>Projects Done</span>
                 </div>
             </div>
-            
         </section>
 
         <footer>
@@ -59,6 +63,7 @@
     </div>
 
     <script>
+        // --- 1. Typewriter Animation Script ---
         const words = ["Next Web Developer.", "Tech Innovator.", "Problem Solver."];
         let wordIndex = 0;
         let charIndex = 0;
@@ -67,7 +72,6 @@
 
         function typeEffect() {
             const currentWord = words[wordIndex];
-            
             if (isDeleting) {
                 targetSpan.textContent = currentWord.substring(0, charIndex - 1);
                 charIndex--;
@@ -78,47 +82,89 @@
             let typingSpeed = isDeleting ? 50 : 100;
 
             if (!isDeleting && charIndex === currentWord.length) {
-                typingSpeed = 2000;
+                typingSpeed = 2000; 
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                typingSpeed = 500;
+                typingSpeed = 500; 
             }
-
             setTimeout(typeEffect, typingSpeed);
         }
 
+        // --- 2. Stat Counter Numbers Script ---
         function runCounterAnimation() {
             const counters = document.querySelectorAll('.counter');
-            
             counters.forEach(counter => {
                 counter.innerText = '0';
                 const target = +counter.getAttribute('data-target');
-                
                 if (target === 2 && counter.nextElementSibling.textContent.includes("Year Student")) {
                     counter.innerText = "2nd";
                 } else if (target <= 10) {
                     counter.innerText = target + "+";
-                } else {
-                    const updateCounter = () => {
-                        const count = +counter.innerText;
-                        const increment = target / 100;
-                        if(count < target) {
-                            counter.innerText = `${Math.ceil(count + increment)}`;
-                            setTimeout(updateCounter, 20);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-                    updateCounter();
                 }
             });
         }
 
+        // --- 3. Interactive Particle Background Script ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 210, 255, 0.7)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < 60; i++) { 
+                particlesArray.push(new Particle()); 
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener('resize', () => { 
+            resizeCanvas(); 
+            initParticles(); 
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
-            typeEffect();
-            runCounterAnimation();
+            typeEffect(); 
+            runCounterAnimation(); 
+            resizeCanvas(); 
+            initParticles(); 
+            animateParticles();
         });
     </script>
 </body>
