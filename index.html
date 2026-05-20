@@ -1,284 +1,234 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Skills & Projects | Henok Brihanu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="projects.css">
-</head>
-<body>
 
-    <header>
-        <nav>
-            <div class="logo">HENOK.B</div>
-            
-            <div class="profile-container">
-                <img src="henich.jpg" alt="Henok Brihanu">
-            </div>
+        body {
+            background-color: #0d1527;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; 
+            overflow: hidden; 
+        }
 
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="registration.html">Register</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        header {
+            background-color: #111a2e;
+            padding: 15px 50px;
+            border-bottom: 1px solid #1e293b;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+        }
 
-    <section class="skills-section">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-info"><span>C++ / Programming II</span><span>85%</span></div>
-                <div class="progress-bar"><div class="progress" data-width="85%"></div></div> 
-            </div>
-            <div class="skill-item">
-                <div class="skill-info"><span>Database (SQL)</span><span>80%</span></div>
-                <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-info"><span>HTML / CSS</span><span>95%</span></div>
-                <div class="progress-bar"><div class="progress" data-width="95%"></div></div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
-                <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
-            </div>
-        </div>
-    </section>
+        nav {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
-    <section class="add-project-section">
-        <h2>Add New Project / Certificate</h2>
-        <form id="projectForm">
-            <div class="form-group">
-                <label for="projTitle">Title:</label>
-                <input type="text" id="projTitle" placeholder="Eg. Ethio Coders | Python" required>
-            </div>
-            <div class="form-group">
-                <label for="projCategory">Category:</label>
-                <select id="projCategory" required>
-                    <option value="certificate">Certificates</option>
-                    <option value="database">Database/SQL</option>
-                    <option value="cpp">OS & C++</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="projFileName">File Name (with extension):</label>
-                <input type="text" id="projFileName" placeholder="Eg. python_cert.pdf or project.docx" required>
-            </div>
-            <button type="submit" class="submit-btn"><i class="fas fa-plus"></i> Add Project</button>
-        </form>
-    </section>
+        .logo h2 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            margin: 0;
+            flex: 1;
+            text-align: left;
+        }
 
-    <section class="project-section">
-        <h2>Featured Projects & Certificates</h2>
-        
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="certificate">Certificates</button>
-            <button class="filter-btn" data-filter="database">Database/SQL</button>
-            <button class="filter-btn" data-filter="cpp">OS & C++</button>
-        </div>
+        .profile-container {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 3px solid #38bdf8;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto; 
+        }
 
-        <div class="project-grid" id="projectGrid">
-            
-            <div class="project-card" data-category="certificate">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-brain"></i></div>
-                    <div class="card-info"><h3>Ethio Coders | Artificial Intelligence</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\AI.pdf" download="Henok_AI_Certificate" class="download-btn">
-                        <i class="fas fa-download"></i> Download AI
-                    </a>
-                    <div class="category-tag">Certificates</div>
-                </div>
-            </div>
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-            <div class="project-card" data-category="certificate">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <div class="card-info"><h3>Ethio Coders | Programming Fundamental</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\programming fundamental.pdf" download="Henok_Programming_Certificate" class="download-btn">
-                        <i class="fas fa-download"></i> Download Code
-                    </a>
-                    <div class="category-tag">Certificates</div>
-                </div>
-            </div>
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+            justify-content: flex-end; 
+        }
 
-            <div class="project-card" data-category="certificate">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
-                    <div class="card-info"><h3>Ethio Coders | Data Analyst</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\data analist.pdf" download="Henok_Data_Analyst_Certificate" class="download-btn">
-                        <i class="fas fa-download"></i> Download Data
-                    </a>
-                    <div class="category-tag">Certificates</div>
-                </div>
-            </div>
+        nav ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
 
-            <div class="project-card" data-category="certificate">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <div class="card-info"><h3>Ethio Coders | Android Fundamental</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\android fundamentals.pdf" 
-                    download="Henok_Android_Certificate" class="download-btn">
-                        <i class="fas fa-download"></i> Download Android
-                    </a>
-                    <div class="category-tag">Certificates</div>
-                </div>
-            </div>
+        nav ul li a:hover, nav ul li a.active {
+            color: #38bdf8;
+        }
 
-            <div class="project-card" data-category="database">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-database"></i></div>
-                    <div class="card-info"><h3>Database System Project (SQL / DBMS)</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\WACHEMO UNIVERSITY DATABASE PROJECT (1).pdf""
-                     download="Wachemo_Database_Project" class="download-btn">
-                        <i class="fas fa-folder-open"></i> SQL Source
-                    </a>
-                    <div class="category-tag">Database</div>
-                </div>
-            </div>
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-            <div class="project-card" data-category="cpp">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                    <div class="card-info"><h3>Operating System Scheduling algorithms (FCFS, SJF, Round Robin)</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\Operating system with python.pdf"
-                    download="OS_Scheduling with" class="download-btn">
-                        <i class="fas fa-folder-open"></i> OS Simulator
-                    </a>
-                    <div class="category-tag">OS </div>
-                </div>
-            </div>
+        /* Particle Canvas Background */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 25px;
+        }
 
-            <div class="project-card" data-category="cpp">
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas fa-university"></i></div>
-                    <div class="card-info"><h3>Multi-Bank Queue Management System (Singly Linked List)</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="C:\Users\henok12\Desktop\HTML\HTML PROJECT\my personal webite\my website\Hena web\DSA project (3).pdf"
-                    download="Multi_Bank_Queue_Project" class="download-btn">
-                        <i class="fas fa-folder-open"></i> Queue Project
-                    </a>
-                    <div class="category-tag">DSA</div>
-                </div>
-            </div>
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #ffffff;
+            font-weight: 800;
+        }
 
-        </div>
-    </section>
+        .hero p {
+            color: #94a3b8;
+            font-size: 1.3rem;
+            margin: 0;
+            line-height: 1.6;
+            max-width: 650px;
+        }
 
-    <footer>
-        Wachemo University
-    </footer>
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Skill Progress Bar Animation
-    const progressBars = document.querySelectorAll('.progress');
-    setTimeout(() => {
-        progressBars.forEach(bar => {
-            const targetWidth = bar.getAttribute('data-width');
-            bar.style.width = targetWidth;
-        });
-    }, 200);
+        .typing-container {
+            font-size: 1.6rem;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+            min-height: 38px;
+        }
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
+        #typing-text {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #38bdf8;
+            margin-left: 5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-main, .btn-primary {
+            background-color: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .btn-main:hover, .btn-primary:hover {
+            background-color: #2563eb;
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-alt, .btn-secondary {
+            background-color: transparent;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
+        }
+
+        .btn-alt:hover, .btn-secondary:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .stat-item {
+            background-color: #111a2e;
+            border: 1px solid #1e293b;
+            padding: 20px 40px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 140px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 2.6rem;
+            color: #38bdf8;
+            margin: 0 0 5px 0;
+            font-weight: 700;
+        }
+
+        .stat-item span {
+            color: #94a3b8;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            color: #64748b;
+            font-size: 0.95rem;
+            border-top: 1px solid #1e293b;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
     
-    function applyFilter() {
-        const activeBtn = document.querySelector('.filter-btn.active');
-        const filterValue = activeBtn.getAttribute('data-filter');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        projectCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            
-            if (filterValue === 'all' || cardCategory === filterValue) {
-                card.style.display = 'flex';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'scale(1)';
-                }, 50);
-            } else {
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300); 
-            }
-        });
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.filter-btn.active').classList.remove('active');
-            button.classList.add('active');
-            applyFilter();
-        });
-    });
-
-    const projectForm = document.getElementById('projectForm');
-    const projectGrid = document.getElementById('projectGrid');
-
-    if (projectForm) {
-        projectForm.addEventListener('submit', (e) => {
-            e.preventDefault(); 
-
-            const title = document.getElementById('projTitle').value;
-            const category = document.getElementById('projCategory').value; 
-            const fileName = document.getElementById('projFileName').value;
-
-            let iconClass = 'fa-folder-open';
-            let tagText = 'OS & C++';
-            
-            if (category === 'certificate') {
-                iconClass = 'fa-award';
-                tagText = 'Certificates';
-            } else if (category === 'database') {
-                iconClass = 'fa-database';
-                tagText = 'Database';
-            } else if (category === 'cpp') {
-                iconClass = 'fa-microchip';
-                tagText = 'OS & C++';
-            }
-
-            const newCard = document.createElement('div');
-            newCard.classList.add('project-card');
-            newCard.setAttribute('data-category', category); 
-            
-            newCard.innerHTML = `
-                <div class="card-left">
-                    <div class="card-icon"><i class="fas ${iconClass}"></i></div>
-                    <div class="card-info"><h3>${title}</h3></div>
-                </div>
-                <div class="card-right">
-                    <a href="files/${fileName}" download="${title.replace(/\s+/g, '_')}" class="download-btn">
-                        <i class="fas fa-download"></i> Download
-                    </a>
-                    <div class="category-tag">${tagText}</div>
-                </div>
-            `;
-
-            projectGrid.insertBefore(newCard, projectGrid.firstChild);
-
-            projectForm.reset();
-
-            applyFilter();
-            
-            alert('New item added successfully!');
-        });
-    }
-});</script>
-</body>
-</html>
