@@ -1,4 +1,4 @@
-
+   
 :root {
     --bg-dark: #0b0f19;         
     --card-bg: #131c2e;          
@@ -60,7 +60,7 @@ section {
 }
 
 /* ==========================================
-   2. HEADER & NAV BAR (With Glow Profile)
+   2. HEADER & NAV BAR (Photo Removed)
    ========================================== */
 header {
     background-color: rgba(11, 15, 25, 0.85);
@@ -89,15 +89,6 @@ nav .logo {
     -webkit-text-fill-color: transparent;
 }
 
-.profile-container img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent-blue);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-}
-
 nav ul {
     display: flex;
     list-style: none;
@@ -119,7 +110,32 @@ nav ul li a.active {
 }
 
 /* ==========================================
-   3. SKILLS GRID SECTION (Multi-Color Glows)
+   NEW: PROFILE SECTION (Centered Below Header)
+   ========================================== */
+.profile-section {
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.profile-container img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-blue);
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(157, 78, 221, 0.7);
+    border-color: var(--accent-purple);
+}
+
+/* ==========================================
+   3. SKILLS GRID SECTION 
    ========================================== */
 .skills-grid {
     display: grid;
@@ -157,11 +173,10 @@ nav ul li a.active {
     overflow: hidden;
 }
 
-/* Unique glowing gradient tracks for each type of skill */
-.skill-item:nth-child(1) .progress { background: linear-gradient(90deg, #f59e0b, #ef4444); } /* C++ / Prog Warm Gradient */
-.skill-item:nth-child(2) .progress { background: linear-gradient(90deg, #3b82f6, #06b6d4); } /* SQL Ocean Gradient */
-.skill-item:nth-child(3) .progress { background: linear-gradient(90deg, #10b981, #6366f1); } /* HTML Modern Gradient */
-.skill-item:nth-child(4) .progress { background: linear-gradient(90deg, #ec4899, #f43f5e); } /* JS Vibrant Pink/Red */
+.skill-item:nth-child(1) .progress { background: linear-gradient(90deg, #f59e0b, #ef4444); } 
+.skill-item:nth-child(2) .progress { background: linear-gradient(90deg, #3b82f6, #06b6d4); } 
+.skill-item:nth-child(3) .progress { background: linear-gradient(90deg, #10b981, #6366f1); } 
+.skill-item:nth-child(4) .progress { background: linear-gradient(90deg, #ec4899, #f43f5e); } 
 
 .progress {
     height: 100%;
@@ -385,3 +400,4 @@ footer {
         justify-content: space-between;
     }
 }
+    
