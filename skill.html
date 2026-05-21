@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Skills & Certificates | Henok Brihanu Portfolio</title>
+    <link rel="stylesheet" href="skill.css">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><h2>Henok Brihanu</h2></div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="profile-container">
+            <img src="henich.jpg" alt="Henok Brihanu" class="profile-img">
+            <h1>Henok Brihanu</h1>
+            <p>Full-Stack Developer & Content Creator</p>
+        </div>
+
+        <div class="container">
+            
+            <div class="skills-section-block">
+                <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fab fa-html5 web-tech"></i> HTML</span>
+                            <span class="web-tech">90%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-web-tech" data-target="90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fab fa-css3-alt web-tech"></i> CSS</span>
+                            <span class="web-tech">85%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-web-tech" data-target="85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fab fa-js prog-lang"></i> JavaScript</span>
+                            <span class="prog-lang">80%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-prog-lang" data-target="80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fas fa-terminal prog-lang"></i> C++</span>
+                            <span class="prog-lang">75%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-prog-lang" data-target="75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fas fa-server sys-db"></i> Operating System</span>
+                            <span class="sys-db">75%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-sys-db" data-target="75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fas fa-database sys-db"></i> Database Programming</span>
+                            <span class="sys-db">70%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-sys-db" data-target="70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section-block">
+                <h2 class="section-title creative-title"><i class="fas fa-heart"></i> Creative Interests</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fas fa-video creative"></i> CapCut / Video Editing</span>
+                            <span class="creative">85%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-creative" data-target="85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-name">
+                            <span><i class="fas fa-photo-film creative"></i> Digital Content Creation</span>
+                            <span class="creative">80%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-fill bg-creative" data-target="80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section-block">
+                <h2 class="section-title cert-title"><i class="fas fa-award"></i> Verified Certificates</h2>
+                
+                <div class="cert-grid">
+                    <div class="cert-card" onclick="openModal('AI.pdf', 'Artificial Intelligence')">
+                        <div class="cert-info">
+                            <div class="cert-icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="cert-details">
+                                <h3>Artificial Intelligence</h3>
+                                <p>skill</p>
+                            </div>
+                        </div>
+                        <div class="cert-actions"><button class="view-btn"><i class="fas fa-eye"></i> View</button></div>
+                    </div>
+
+                    <div class="cert-card" onclick="openModal('android fundamental.pdf', 'android fundamental')">
+                        <div class="cert-info">
+                            <div class="cert-icon-wrapper"><i class="fas fa-code"></i></div>
+                            <div class="cert-details">
+                                <h3>Android fundamental</h3>
+                                <p>skill</p>
+                            </div>
+                        </div>
+                        <div class="cert-actions"><button class="view-btn"><i class="fas fa-eye"></i> View</button></div>
+                    </div>
+
+                    <div class="cert-card" onclick="openModal('programming fundamental.pdf', 'Programming fundamental')">
+                        <div class="cert-info">
+                            <div class="cert-icon-wrapper"><i class="fab fa-js-square"></i></div>
+                             <h3>Programming fundamentals</h3>
+                                <p>skill</p>
+                            <div class="cert-details">
+                                
+
+                            </div>
+                        </div>
+                        <div class="cert-actions"><button class="view-btn"><i class="fas fa-eye"></i> View</button></div>
+                    </div>
+
+                    <div class="cert-card" onclick="openModal('data analist.pdf', 'Data analist)">
+                        <div class="cert-info">
+                            <div class="cert-icon-wrapper"><i class="fas fa-photo-film"><Data analist</Data></i></div>
+                            <div class="cert-details">
+                                 <h3>Data analist</Data></h3>
+                                <p>Web Development</p>
+                            </div>
+                        </div>
+                        <div class="cert-actions"><button class="view-btn"><i class="fas fa-eye"></i> View</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Henok Brihanu. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <div class="modal-overlay" id="certModal">
+        <div class="modal-content-box">
+            <button class="close-modal-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <img src="" alt="Certificate Preview" id="modalImg" class="certificate-img-preview">
+            <br>
+            <a href="" id="modalDownload" download="" class="modal-download-link">
+                <i class="fas fa-download"></i> Download Certificate
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressFills = document.querySelectorAll('.progress-fill');
+            setTimeout(() => {
+                progressFills.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-target');
+                    bar.style.width = targetWidth;
+                });
+            }, 300);
+        });
+
+        const modal = document.getElementById('certModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalDownload = document.getElementById('modalDownload');
+
+        function openModal(imgSrc, certName) {
+            modalImg.src = imgSrc;
+            modalImg.alt = certName;
+            modalDownload.href = imgSrc;
+            modalDownload.download = certName.replace(/\s+/g, '_');
+            modal.classList.add('open');
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
