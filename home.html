@@ -13,18 +13,16 @@
                 <li><a href="home.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="registration.html">Register</a></li>
+                <li><a href="skill.html">skill</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="scrollable-content">
-        <!-- Interactive Canvas Background -->
         <canvas id="particle-canvas"></canvas>
         
         <section class="hero">
-            <!-- 1. Standalone Profile Photo Below Header -->
             <div class="hero-profile-wrapper">
                 <div class="hero-profile-container">
                     <img src="henich.jpg" alt="Henok Brihanu">
@@ -34,7 +32,6 @@
             <h1>Henok Brihanu</h1>
             <p>Information Technology Student at Wachemo University</p>
             
-            <!-- Typewriter Container -->
             <div class="typing-container">
                 I am a <span id="typing-text"></span><span class="cursor">|</span>
             </div>
@@ -44,7 +41,6 @@
                 <a href="contact.html" class="btn btn-alt">Contact Me</a>
             </div>
 
-            <!-- Stats Dashboard Section -->
             <div class="stats">
                 <div class="stat-item">
                     <h3 class="counter" data-target="2">0</h3>
@@ -63,7 +59,6 @@
     </div>
 
     <script>
-        // --- 1. Typewriter Animation Script ---
         const words = ["Next Web Developer.", "Tech Innovator.", "Problem Solver."];
         let wordIndex = 0;
         let charIndex = 0;
@@ -91,8 +86,6 @@
             }
             setTimeout(typeEffect, typingSpeed);
         }
-
-        // --- 2. Stat Counter Numbers Script ---
         function runCounterAnimation() {
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
@@ -106,7 +99,6 @@
             });
         }
 
-        // --- 3. Interactive Particle Background Script ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particlesArray = [];
@@ -157,7 +149,8 @@
         window.addEventListener('resize', () => { 
             resizeCanvas(); 
             initParticles(); 
-        });
+        }
+        );
 
         window.addEventListener('DOMContentLoaded', () => {
             typeEffect(); 
